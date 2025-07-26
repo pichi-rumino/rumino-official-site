@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>待雪ルミ乃 Official Site</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=20250726123456">
 </head>
 <body>
 
@@ -16,6 +16,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#works">Works</a></li>
         <li><a href="#links">Links</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -23,11 +24,12 @@
   <main>
     <section id="about">
       <h2>About</h2>
-      <img src="images/zlNTRMSN_400x400.jpg" alt="プロフィール画像" style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover; display: block; margin: 1rem auto; border: 3px solid #a78bfa;">
+      <img src="images/Rumino_1.0_Neutral2025-02-16_20-24-51.446.png" alt="プロフィール画像" style="max-width: 80%; height: auto; border-radius: 0; object-fit: contain; display: block; margin: 1rem auto; border: 3px solid #a78bfa;">
       <p>
         Cool Girl NFT発の新人Vtuberの待雪ルミ乃です❄️<br>
         目指せトップアイドル‼️<br>
         <br>
+        【YouTube登録者数】943人<br>
         【総合タグ】 #るみのドロップ<br>
         【FA】 #ルミナリ絵<br>
         【ファンネーム】るみみん<br>
@@ -43,7 +45,7 @@
         <h3>Music</h3>
         <ul>
           <li>
-            <img src="images/GUNpctSaEAARrBr.jpeg" alt="Tale of Thousand Stars" style="width: 100px; vertical-align: middle; margin-right: 10px;">
+            <img src="images/GUNpctSaEAARrBr.jpeg" alt="Tale of Thousand Stars" class="music-image" style="width: 100px; vertical-align: middle; margin-right: 10px;">
             <a href="https://music.apple.com/jp/album/tale-of-thousand-stars-single/1761032217" target="_blank">Tale of Thousand Stars (Single) - Apple Music</a>
           </li>
         </ul>
@@ -52,8 +54,19 @@
         <h3>NFTs</h3>
         <ul>
           <li>
-            <img src="images/38fc31b08d1396c9af75e342865dd75f.jpeg" alt="Rumino Art Collection" style="width: 100px; vertical-align: middle; margin-right: 10px;">
+            <img src="images/無題31_20240919112114.jpg" alt="Rumino Art Collection" style="width: 100px; vertical-align: middle; margin-right: 10px;">
             <a href="https://opensea.io/collection/rumino-art-collection" target="_blank">Rumino Art Collection - OpenSea</a>
+          </li>
+        </ul>
+      </div>
+      <div class="category-section">
+        <h3>Illustrations</h3>
+        <ul>
+          <li>
+            <img src="images/illustration_image0.jpeg" alt="Illustration" class="illustration-image" style="width: 100px; vertical-align: middle; margin-right: 10px;">
+          </li>
+          <li>
+            <img src="images/無題25_20240802111053.png" alt="Illustration" class="illustration-image" style="width: 100px; vertical-align: middle; margin-right: 10px;">
           </li>
         </ul>
       </div>
@@ -71,12 +84,33 @@
         <li><a href="https://x.com/rumino_014" target="_blank">X (旧Twitter)</a></li>
       </ul>
     </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <form action="#" method="POST">
+        <div class="form-group">
+          <label for="name">お名前:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">メールアドレス:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">お問い合わせ内容:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit">送信</button>
+      </form>
+      <p>※このフォームはデモです。実際には送信されません。</p>
+    </section>
   </main>
 
   <footer>
     <p>&copy; 2025 待雪ルミ乃</p>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/snow.js?v=20250726123456"></script>
+  <script src="js/main.js?v=20250726123456"></script>
 </body>
 </html>

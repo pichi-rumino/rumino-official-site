@@ -1,14 +1,16 @@
 body {
-  background-color: #2c2c34;
-  color: #f0f0f0;
-  font-family: sans-serif;
+  background-color: #e0f2f7; /* 明るい水色 */
+  color: #2c3e50; /* 濃い青 */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* フォント変更 */
   margin: 0;
+  line-height: 1.6;
 }
 
 header {
-  background-color: #1a1a20;
+  background-color: #b3e0f2; /* 少し濃い水色 */
   padding: 1rem;
   text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 影を追加 */
 }
 
 nav ul {
@@ -23,55 +25,78 @@ nav ul li {
 }
 
 nav a {
-  color: #b3e0ff; /* 明るい水色 */
+  color: #ffffff; /* 白 */
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s;
-  font-size: 1.2rem; /* フォントサイズを大きく */
+  transition: color 0.3s, transform 0.3s; /* ホバーアニメーション */
+  font-size: 1.2rem;
 }
 
 nav a:hover {
-  color: #a78bfa; /* パステルパープル */
+  color: #a7d9ed; /* 薄い青 */
+  transform: translateY(-2px); /* 少し上に移動 */
 }
 
 header img {
   width: 100%;
-  max-height: 400px; /* 最大高さを設定 */
-  object-fit: cover; /* 画像がコンテナに収まるように調整 */
+  max-height: 400px;
+  object-fit: cover;
 }
 
 #about {
   text-align: center;
+  padding: 4rem 2rem; /* 上下のパディングを増やす */
+  background-color: #f0f8ff; /* わずかに異なる背景色 */
 }
 
 #about img {
-  width: 180px; /* プロフィール画像を少し大きく */
-  height: 180px; /* 高さを幅と同じにして正円に */
-  border-radius: 50%;
-  object-fit: cover; /* 画像がコンテナに収まるように調整 */
+  width: 300px; /* 他のカテゴリ画像と同じ幅に */
+  height: auto; /* 縦横比を維持 */
+  border-radius: 0; /* 角を丸くしない */
+  object-fit: contain; /* 画像全体が表示されるように */
   display: block;
   margin: 1rem auto;
-  border: 3px solid #a78bfa; /* 枠線を追加 */
+  border: 3px solid #a7d9ed;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1); /* 影を追加 */
 }
 
 main {
-  padding: 2rem;
+  padding: 0;
 }
 
 section {
-  margin-bottom: 2rem;
+  margin-bottom: 0;
+  padding: 4rem 2rem; /* 各セクションのパディング */
+}
+
+section:nth-of-type(even) { /* 偶数番目のセクションの背景色 */
+  background-color: #f8fcff;
 }
 
 h2 {
-  color: #a78bfa; /* パステルパープル */
-  border-bottom: 2px solid #a78bfa;
+  color: #2c3e50;
+  border-bottom: 2px solid #a7d9ed;
   padding-bottom: 0.5rem;
+  margin-bottom: 2rem; /* 下の余白を増やす */
+  display: inline-block; /* アニメーションのためにインラインブロックに */
+  animation: fadeInDown 1s ease-out; /* アニメーション追加 */
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .youtube-thumbnail {
   text-align: center;
   margin-bottom: 1rem;
-  max-width: 600px; /* YouTubeサムネイルの最大幅 */
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -79,7 +104,7 @@ h2 {
 .youtube-thumbnail img {
   max-width: 100%;
   height: auto;
-  border: 2px solid #a78bfa;
+  border: 2px solid #a7d9ed;
   border-radius: 8px;
   transition: transform 0.3s ease;
 }
@@ -89,37 +114,158 @@ h2 {
 }
 
 h3 {
-  color: #8bfac8; /* パステルグリーン */
-  border-bottom: 1px solid #8bfac8;
+  color: #2c3e50;
+  border-bottom: 1px solid #a7d9ed;
   padding-bottom: 0.3rem;
   margin-top: 1.5rem;
+  animation: fadeIn 1s ease-out; /* アニメーション追加 */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .category-section ul {
   list-style: none;
   padding: 0;
+  display: flex; /* 横並びにする */
+  flex-wrap: wrap; /* 折り返しを許可 */
+  justify-content: center; /* 中央揃え */
 }
 
 .category-section li {
   margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
+  margin-right: 1rem; /* 画像間の余白 */
+}
+
+.category-section li:last-child {
+  margin-right: 0; /* 最後の要素の右マージンをなくす */
 }
 
 .category-section img {
-  width: 100px; /* 画像サイズを統一 */
-  height: 100px; /* 高さを幅と同じにして正方形に */
-  object-fit: cover; /* 画像がコンテナに収まるように調整 */
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
   margin-right: 15px;
-  border-radius: 8px; /* 角を丸く */
-  border: 1px solid #8bfac8; /* 枠線を追加 */
+  border-radius: 8px;
+  border: 1px solid #a7d9ed;
+}
+
+.illustration-image {
+  width: 400px; /* 他の画像より大きく */
+  height: 400px; /* 他の画像より大きく */
+}
+
+.music-image {
+  width: 500px; /* Music画像を500pxに */
+  height: 500px; /* Music画像を500pxに */
+  object-fit: contain; /* 画像全体が表示されるように */
 }
 
 a {
-  color: #ffccff; /* 明るいピンク */
-  font-size: 1.1rem; /* フォントサイズを大きく */
+  color: #2c3e50;
+  font-size: 1.1rem;
+  transition: color 0.3s;
 }
 
 a:hover {
-  color: #f0f0f0;
+  color: #a7d9ed;
+}
+
+footer {
+  background-color: #b3e0f2;
+  color: #2c3e50;
+  text-align: center;
+  padding: 1.5rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1); /* 影を追加 */
+}
+
+/* Contact Form Styles */
+#contact form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 1px solid #a7d9ed;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  background-color: #f8fcff;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #a7d9ed;
+  border-radius: 4px;
+  box-sizing: border-box; /* パディングを含めて幅を計算 */
+  font-size: 1rem;
+  color: #2c3e50;
+  background-color: #ffffff;
+}
+
+.form-group textarea {
+  resize: vertical; /* 垂直方向のリサイズを許可 */
+}
+
+#contact button[type="submit"] {
+  background-color: #a7d9ed; /* 薄い青 */
+  color: #ffffff; /* 白 */
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+#contact button[type="submit"]:hover {
+  background-color: #87c0d9; /* 少し濃い青 */
+}
+
+#contact p {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  nav ul li {
+    display: block;
+    margin: 0.5rem 0;
+  }
+
+  section {
+    padding: 2rem 1rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
 }
