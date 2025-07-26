@@ -49,12 +49,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     @keyframes swayRight {
       0% { transform: translateX(0); }
-      50% { transform: translateX(5vw); }
+      50% { transform: translateX(15vw); } /* 揺れの幅を広げる */
       100% { transform: translateX(0); }
     }
     @keyframes swayLeft {
       0% { transform: translateX(0); }
-      50% { transform: translateX(-5vw); }
+      50% { transform: translateX(-15vw); } /* 揺れの幅を広げる */
       100% { transform: translateX(0); }
     }
   `;
