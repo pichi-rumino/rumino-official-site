@@ -38,4 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 2500); // 画像アニメーション時間(2000ms) + 少しの余裕(500ms)
     }
   });
+
+  // Scroll progress bar
+  const scrollProgress = document.getElementById('scroll-progress');
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (scrollTop / scrollHeight) * 100;
+    scrollProgress.style.width = scrolled + '%';
+  });
 });

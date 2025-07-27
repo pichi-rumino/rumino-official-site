@@ -8,6 +8,16 @@ body {
   color: #333;
 }
 
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 5px; /* バーの高さ */
+  background-color: #8A2BE2; /* 紫色 */
+  z-index: 10000; /* 他の要素より前面に */
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
