@@ -4,9 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>待雪ルミ乃 Official Site</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=20250726123456">
 </head>
 <body>
+  <div id="loading-overlay">
+    <div class="loading-content">
+      <div class="img-wrap">
+        <img src="images/20220924_matuyukiruminosama_sign_g.png" alt="Loading...">
+      </div>
+      <p class="loading-text">Welcome to Rumino's Official Site</p>
+    </div>
+  </div>
 
   <header>
     <img src="images/1500x500.jpeg" alt="メインビジュアル" style="width: 100%;">
@@ -15,7 +26,7 @@
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#works">Works</a></li>
-        <li><a href="#links">Links</a></li>
+        <li><a href="#links">Movies</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -24,19 +35,23 @@
   <main>
     <section id="about">
       <h2>About</h2>
-      <img src="images/Rumino_1.0_Neutral2025-02-16_20-24-51.446.png" alt="プロフィール画像" style="max-width: 80%; height: auto; border-radius: 0; object-fit: contain; display: block; margin: 1rem auto; border: 3px solid #a78bfa;">
-      <p>
-        Cool Girl NFT発の新人Vtuberの待雪ルミ乃です❄️<br>
-        目指せトップアイドル‼️<br>
-        <br>
-        【YouTube登録者数】943人<br>
-        【総合タグ】 #るみのドロップ<br>
-        【FA】 #ルミナリ絵<br>
-        【ファンネーム】るみみん<br>
-        【ファンマ】⛄️💜<br>
-        <br>
-        【skeb】<a href="https://skeb.jp/@rumino_014" target="_blank">https://skeb.jp/@rumino_014</a>
-      </p>
+      <div class="about-flex-container">
+        <img src="images/Rumino_1.0_Neutral2025-02-16_20-24-51.446.png" alt="プロフィール画像">
+        <div>
+          <p>
+            Cool Girl NFT発の新人Vtuberの待雪ルミ乃です❄️<br>
+            目指せトップアイドル‼️<br>
+            <br>
+            【YouTube登録者数】943人<br>
+            【総合タグ】 #るみのドロップ<br>
+            【FA】 #ルミナリ絵<br>
+            【ファンネーム】るみみん<br>
+            【ファンマ】⛄️💜<br>
+            <br>
+            【skeb】<a href="https://skeb.jp/@rumino_014" target="_blank">https://skeb.jp/@rumino_014</a>
+          </p>
+        </div>
+      </div>
     </section>
 
     <section id="works">
@@ -70,39 +85,60 @@
           </li>
         </ul>
       </div>
+      <div class="category-section">
+        <h3>Shop</h3>
+        <ul>
+          <li>
+            <img src="images/表.png" alt="SUZURI Shop Image" style="width: 200px; height: auto; vertical-align: middle; margin-right: 10px;">
+            <a href="https://suzuri.jp/CoolGirl_NFT014" target="_blank">SUZURI Shop</a>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <section id="links">
-      <h2>Links</h2>
+      <h2>Movies</h2>
       <div class="youtube-thumbnail">
         <a href="https://www.youtube.com/watch?v=RiceEeetSLo" target="_blank">
           <img src="https://img.youtube.com/vi/RiceEeetSLo/hqdefault.jpg" alt="YouTube Latest Video Thumbnail">
         </a>
       </div>
       <ul>
-        <li><a href="https://www.youtube.com/@rumino_014" target="_blank">YouTube Channel</a></li>
-        <li><a href="https://x.com/rumino_014" target="_blank">X (旧Twitter)</a></li>
+        <!-- YouTube Channel link will be moved to a bubble -->
       </ul>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
-      <form action="https://formspree.io/f/manbovvp" method="POST">
+      <form>
         <div class="form-group">
-          <label for="name">お名前:</label>
+          <label for="name">Name</label>
           <input type="text" id="name" name="name" required>
         </div>
         <div class="form-group">
-          <label for="email">メールアドレス:</label>
+          <label for="email">Email</label>
           <input type="email" id="email" name="email" required>
         </div>
         <div class="form-group">
-          <label for="message">お問い合わせ内容:</label>
+          <label for="message">Message</label>
           <textarea id="message" name="message" rows="5" required></textarea>
         </div>
-        <button type="submit">送信</button>
+        <button type="submit">Send</button>
       </form>
     </section>
+
+    <div id="youtube-bubble">
+      <a href="https://www.youtube.com/@rumino_014" target="_blank">
+        <img src="images/channels4_profile.jpg" alt="YouTube Logo">
+      </a>
+    </div>
+
+    <div id="x-bubble">
+      <a href="https://x.com/rumino_014" target="_blank">
+        <img src="images/sl_z_072523_61700_01.jpg" alt="X (Twitter) Logo">
+      </a>
+    </div>
+
   </main>
 
   <footer>
