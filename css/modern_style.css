@@ -282,7 +282,7 @@ h2::after {
 }
 
 .movie-item {
-  flex: 1 1 45%; /* Flex-grow, flex-shrink, and basis */
+  flex: 0 1 45%; /* Flex-grow, flex-shrink, and basis */
   max-width: 45%; /* On larger screens, two items per row */
   text-align: center;
 }
