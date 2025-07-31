@@ -274,43 +274,58 @@ h2::after {
 }
 
 /* Movies Section */
-.youtube-thumbnail {
-  text-align: center;
-  margin: 0 auto;
-  max-width: 800px; /* Adjust max-width as needed */
+.movies-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; /* Adjust gap as needed */
 }
 
-.youtube-thumbnail a {
+.movie-item {
+  flex: 1 1 45%; /* Flex-grow, flex-shrink, and basis */
+  max-width: 45%; /* On larger screens, two items per row */
+  text-align: center;
+}
+
+.movie-item a {
   display: inline-block;
   position: relative;
   transition: transform 0.3s ease;
 }
 
-.youtube-thumbnail a:hover {
+.movie-item a:hover {
   transform: scale(1.05);
 }
 
-.youtube-thumbnail img {
-  max-width: 100%;
+.movie-item img {
+  width: 100%; /* Make image fill the container */
   height: auto;
   border-radius: 8px;
   border: 2px solid #a7d9ed;
 }
 
-.youtube-thumbnail a::after {
+.movie-item a::after {
   content: '▶';
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 80px;
+  font-size: 60px; /* Slightly smaller play icon */
   color: rgba(255, 255, 255, 0.8);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   transition: color 0.3s ease;
 }
 
-.youtube-thumbnail a:hover::after {
+.movie-item a:hover::after {
   color: rgba(255, 0, 0, 0.9);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 767px) {
+  .movie-item {
+    flex-basis: 100%; /* Full width on smaller screens */
+    max-width: 100%;
+  }
 }
 
 .youtube-container {
