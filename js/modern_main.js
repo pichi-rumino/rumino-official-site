@@ -19,15 +19,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // Loading overlay fade out
   const loadingOverlay = document.getElementById('loading-overlay');
   const loadingContent = document.querySelector('.loading-content');
+  const walkingCat = document.getElementById('walking-cat');
 
   window.addEventListener('load', () => {
     if (loadingOverlay) {
-      // Initial fade-in for loading content (if any, though CSS handles most of it)
       if (loadingContent) {
-        loadingContent.style.opacity = 1; // Ensure it's visible before fading out
+        loadingContent.style.opacity = 1;
       }
 
-      // After a short delay, fade out the loading overlay
       setTimeout(() => {
         if (loadingOverlay) {
           loadingOverlay.classList.add('hidden');
@@ -35,8 +34,16 @@ document.addEventListener('DOMContentLoaded', () => {
             loadingOverlay.remove();
           });
         }
-      }, 2500); // 画像アニメーション時間(2000ms) + 少しの余裕(500ms)
+      }, 2500);
     }
+
+    // Start cat animation 10 seconds after page load
+    setTimeout(() => {
+      if (walkingCat) {
+        walkingCat.style.visibility = 'visible';
+        walkingCat.style.animationPlayState = 'running';
+      }
+    }, 10000);
   });
 
   // Scroll progress bar
@@ -47,5 +54,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     const scrolled = (scrollTop / scrollHeight) * 100;
     scrollProgress.style.width = scrolled + '%';
+
+    // Hide cat when scrolling down, show when at top
+    if (walkingCat) {
+      if (scrollTop > 100) {
+        walkingCat.style.visibility = 'hidden';
+        walkingCat.style.animationPlayState = 'paused';
+      } else {
+        // Only resume animation if it was paused by scrolling
+        if (walkingCat.style.animationPlayState === 'paused') {
+          walkingCat.style.visibility = 'visible';
+          walkingCat.style.animationPlayState = 'running';
+        }
+      }
+    }
   });
 });
