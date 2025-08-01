@@ -55,18 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const scrolled = (scrollTop / scrollHeight) * 100;
     scrollProgress.style.width = scrolled + '%';
 
-    // Hide cat when scrolling down, show when at top
+    // Keep cat visible and animated regardless of scroll
     if (walkingCat) {
-      if (scrollTop > 100) {
-        walkingCat.style.visibility = 'hidden';
-        walkingCat.style.animationPlayState = 'paused';
-      } else {
-        // Only resume animation if it was paused by scrolling
-        if (walkingCat.style.animationPlayState === 'paused') {
-          walkingCat.style.visibility = 'visible';
-          walkingCat.style.animationPlayState = 'running';
-        }
-      }
+      walkingCat.style.visibility = 'visible';
+      walkingCat.style.animationPlayState = 'running';
     }
   });
 });
